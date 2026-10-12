@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import { assetUrl } from '@/lib/assetUrl';
 
 interface PageHeroProps {
   title: string;
@@ -13,7 +14,7 @@ export function PageHero({ title, subtitle, image, breadcrumb }: PageHeroProps) 
     <section className="relative min-h-[55vh] flex items-end overflow-hidden bg-dark-1">
       <div className="absolute inset-0">
         <img
-          src={image}
+          src={assetUrl(image)}
           alt=""
           className="w-full h-full object-cover"
           loading="eager"

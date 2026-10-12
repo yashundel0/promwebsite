@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import { assetUrl } from '@/lib/assetUrl';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ProgramCard } from '@/components/ProgramCard';
 import { CoachCard } from '@/components/CoachCard';
@@ -18,7 +19,7 @@ export function HomePage() {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
         <div className="absolute inset-0">
           <img
-            src="/images/approach/2.jpg"
+            src={assetUrl('/images/approach/2.jpg')}
             alt="Football training in progress"
             className="w-full h-full object-cover"
             loading="eager"
@@ -81,7 +82,7 @@ export function HomePage() {
               <div className="relative">
                 <div className="img-reveal overflow-hidden">
                   <img
-                    src="/images/about/4.jpg"
+                    src={assetUrl('/images/about/4.jpg')}
                     alt="Young players receiving coaching at PRO-M Football Academy"
                     className="w-full aspect-[4/3] object-cover"
                     loading="lazy"

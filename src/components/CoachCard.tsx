@@ -1,6 +1,7 @@
 import { Reveal } from './Reveal';
 import type { Coach } from '@/data/content';
 import { Award } from 'lucide-react';
+import { assetUrl } from '@/lib/assetUrl';
 
 interface CoachCardProps {
   coach: Coach;
@@ -13,7 +14,7 @@ export function CoachCard({ coach, index = 0 }: CoachCardProps) {
       <article className="card-hover group bg-dark-1 border border-dark-3 overflow-hidden h-full flex flex-col">
         <div className="img-reveal relative aspect-[3/4] overflow-hidden bg-dark-2">
           <img
-            src={coach.image}
+            src={assetUrl(coach.image)}
             alt={coach.name}
             className="w-full h-full object-cover"
             loading="lazy"

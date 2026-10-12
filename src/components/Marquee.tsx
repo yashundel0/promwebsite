@@ -1,12 +1,12 @@
 const items = [
-  'Individual Training',
-  'Group Training',
-  'Team Training',
-  'Football Camps',
-  'Goalkeeping',
-  'Strength & Conditioning',
-  'Video Analysis',
-  'Player Development',
+  'Play for Fun',
+  'Play for Learn',
+  'Learn in Game',
+  'Play like a PRO',
+  'Ages 3-14',
+  'Dubai · Ras Al Khaimah · Abu Dhabi',
+  'Free Trial Session',
+  'Professional Coaches',
 ];
 
 export function Marquee() {

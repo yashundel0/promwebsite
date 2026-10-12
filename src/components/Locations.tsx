@@ -1,6 +1,7 @@
 import { MapPin } from 'lucide-react';
 import { Reveal } from './Reveal';
 import { locations } from '@/data/content';
+import { assetUrl } from '@/lib/assetUrl';
 
 export function Locations() {
   return (
@@ -11,7 +12,7 @@ export function Locations() {
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="block w-8 h-0.5 bg-accent" />
               <span className="font-display text-accent text-xs uppercase tracking-[0.2em] font-medium">
-                Across Dubai
+                Across the UAE
               </span>
               <span className="block w-8 h-0.5 bg-accent" />
             </div>
@@ -26,7 +27,7 @@ export function Locations() {
             <Reveal key={loc.id} direction="up" delay={i * 120}>
               <div className="card-hover group relative overflow-hidden bg-dark-2 border border-dark-3 aspect-[4/5]">
                 <img
-                  src={loc.image}
+                  src={assetUrl(loc.image)}
                   alt={loc.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
@@ -36,7 +37,7 @@ export function Locations() {
                   <div className="flex items-center gap-2 text-accent mb-2">
                     <MapPin size={16} strokeWidth={2} />
                     <span className="font-display text-xs uppercase tracking-wider font-medium">
-                      Dubai, UAE
+                      UAE
                     </span>
                   </div>
                   <h3 className="font-display text-xl font-semibold text-white uppercase tracking-wide mb-1">

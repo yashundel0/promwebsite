@@ -3,6 +3,7 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { Reveal } from '@/components/Reveal';
 import { CTA } from '@/components/CTA';
 import { Trophy, Target, Heart, Users } from 'lucide-react';
+import { assetUrl } from '@/lib/assetUrl';
 
 const values = [
   {
@@ -66,7 +67,7 @@ export function AboutPage() {
             <Reveal direction="right">
               <div className="img-reveal overflow-hidden">
                 <img
-                  src="/images/about/2.jpg"
+                  src={assetUrl('/images/about/2.jpg')}
                   alt="Coach guiding young players at PRO-M Football Academy"
                   className="w-full aspect-[4/3] object-cover"
                   loading="lazy"

@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { PageHero } from '@/components/PageHero';
 import { Reveal } from '@/components/Reveal';
 import { MapPin, Phone, Mail, Clock, CheckCircle, AlertCircle, Loader2, MessageCircle, Instagram, Music2 } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 interface FormData {
   name: string;
@@ -42,6 +42,12 @@ export function ContactPage() {
     setErrorMessage('');
 
     try {
+      if (!supabase || !isSupabaseConfigured) {
+        throw new Error(
+          'Online booking is temporarily unavailable. Please call or WhatsApp us at +971 54 465 1751 to book your trial session.'
+        );
+      }
+
       const { error } = await supabase.from('trial_bookings').insert({
         name: form.name,
         applicant_type: form.applicantType,

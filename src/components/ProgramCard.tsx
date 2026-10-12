@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import type { Program } from '@/data/content';
 import { Reveal } from './Reveal';
+import { assetUrl } from '@/lib/assetUrl';
 
 interface ProgramCardProps {
   program: Program;
@@ -14,7 +15,7 @@ export function ProgramCard({ program, index = 0 }: ProgramCardProps) {
       <article className="card-hover group bg-dark-1 border border-dark-3 overflow-hidden h-full flex flex-col">
         <div className="img-reveal relative aspect-[4/3] overflow-hidden bg-dark-2">
           <img
-            src={program.image}
+            src={assetUrl(program.image)}
             alt={program.title}
             className="w-full h-full object-cover"
             loading="lazy"
