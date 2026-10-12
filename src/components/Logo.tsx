@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { assetUrl } from '@/lib/assetUrl';
 
 interface LogoProps {
   className?: string;
@@ -12,10 +13,13 @@ export function Logo({ className = '', showText = true }: LogoProps) {
       className={`flex items-center gap-2.5 ${className}`}
       aria-label="PRO-M Football Academy home"
     >
-      <div className="flex items-center justify-center w-9 h-9 bg-accent rounded-sm relative">
-        <span className="font-display font-bold text-black text-lg leading-none">P</span>
-        <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-white rounded-full border-2 border-black" />
-      </div>
+      <img
+        src={assetUrl('/images/logo.svg')}
+        alt="PRO-M Football Academy logo"
+        className="h-10 w-10 shrink-0"
+        width={40}
+        height={40}
+      />
       {showText && (
         <div className="flex flex-col leading-none">
           <span className="font-display font-bold text-white text-base tracking-wide">
